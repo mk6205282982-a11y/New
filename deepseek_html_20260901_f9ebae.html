@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BTech Portfolio • NCE Chandi • BEU Patna</title>
+  <!-- Google Fonts & Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f9fcff;
+      color: #1e2b3c;
+      line-height: 1.6;
+      padding: 2rem 1.5rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 2.5rem;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+      padding: 2.5rem 2rem;
+      transition: all 0.2s ease;
+    }
+
+    /* header / intro */
+    .intro {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2.5rem;
+      border-bottom: 2px solid #eef4fa;
+      padding-bottom: 2rem;
+    }
+
+    .intro-text h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #0a1e2f;
+    }
+
+    .intro-text h1 span {
+      color: #2563eb;
+      background: #e8f0fe;
+      padding: 0.1rem 0.6rem;
+      border-radius: 40px;
+      font-size: 1.8rem;
+      margin-left: 0.3rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #1e3a5f;
+      color: white;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 0.4rem 1.2rem;
+      border-radius: 40px;
+      letter-spacing: 0.3px;
+      margin-top: 0.5rem;
+    }
+
+    .intro-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem 1.8rem;
+      margin-top: 0.8rem;
+      font-weight: 400;
+      color: #2c3e50;
+    }
+
+    .intro-meta i {
+      color: #2563eb;
+      width: 1.4rem;
+    }
+
+    .profile-pic {
+      background: #dce7f5;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.2rem;
+      font-weight: 600;
+      color: #1a365d;
+      box-shadow: 0 8px 18px rgba(37, 99, 235, 0.12);
+      border: 4px solid white;
+      outline: 2px solid #2563eb;
+    }
+
+    /* section titles */
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1.2rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: #0b2a44;
+    }
+
+    .section-title i {
+      color: #2563eb;
+      font-size: 1.8rem;
+      width: 2.2rem;
+    }
+
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 2px;
+      background: linear-gradient(90deg, #b3cfe8, transparent);
+      margin-left: 0.8rem;
+    }
+
+    /* cards grid */
+    .grid-2col {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.8rem;
+      margin-top: 0.5rem;
+    }
+
+    .card {
+      background: #f8fafd;
+      padding: 1.5rem 1.3rem;
+      border-radius: 1.8rem;
+      transition: all 0.2s ease;
+      border: 1px solid #e6edf6;
+      box-shadow: 0 4px 8px rgba(0, 27, 55, 0.03);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #b7d0ea;
+      box-shadow: 0 14px 28px -8px rgba(37, 99, 235, 0.12);
+      background: white;
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .card h3 i {
+      color: #2563eb;
+      font-size: 1.2rem;
+      width: 1.6rem;
+    }
+
+    .card .sub {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #2563eb;
+      background: #e1ebf9;
+      display: inline-block;
+      padding: 0.2rem 0.9rem;
+      border-radius: 30px;
+      margin: 0.3rem 0 0.6rem;
+      letter-spacing: 0.2px;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #1f3347;
+      margin-top: 0.4rem;
+    }
+
+    .skill-tag {
+      display: inline-block;
+      background: white;
+      border: 1px solid #d4e0ed;
+      padding: 0.25rem 1rem;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      margin: 0.2rem 0.2rem 0 0;
+      color: #1e3a5f;
+    }
+
+    /* projects list */
+    .project-item {
+      background: #f8fafd;
+      border-radius: 1.5rem;
+      padding: 1.3rem 1.5rem;
+      margin-bottom: 1rem;
+      border-left: 5px solid #2563eb;
+      transition: 0.15s ease;
+    }
+
+    .project-item:hover {
+      background: white;
+      box-shadow: 0 6px 14px rgba(0, 30, 60, 0.05);
+    }
+
+    .project-item h4 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .project-item h4 i {
+      color: #2563eb;
+      font-size: 1.1rem;
+    }
+
+    .project-item .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem 0.7rem;
+      margin: 0.3rem 0 0.2rem;
+    }
+
+    .project-item .project-tech span {
+      background: #e4edf8;
+      padding: 0.1rem 0.9rem;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.2px;
+      color: #14375c;
+    }
+
+    /* contact / footer */
+    .contact-block {
+      background: #f0f6fe;
+      border-radius: 2rem;
+      padding: 1.8rem 2rem;
+      margin-top: 2.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px solid #dbe7f5;
+    }
+
+    .contact-block .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 2.2rem;
+    }
+
+    .contact-block a {
+      color: #1a365d;
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      transition: 0.1s ease;
+      border-bottom: 1px solid transparent;
+    }
+
+    .contact-block a:hover {
+      color: #2563eb;
+      border-bottom-color: #2563eb;
+    }
+
+    .contact-block i {
+      font-size: 1.2rem;
+      width: 1.6rem;
+      color: #2563eb;
+    }
+
+    .footer-note {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #4a5f77;
+      text-align: center;
+      border-top: 1px solid #e5eef8;
+      padding-top: 1.8rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .footer-note strong {
+      color: #0b2a44;
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        padding: 1.8rem 1rem;
+      }
+      .intro {
+        flex-direction: column;
+        align-items: start;
+        gap: 1rem;
+      }
+      .profile-pic {
+        width: 90px;
+        height: 90px;
+        font-size: 2.5rem;
+      }
+      .intro-text h1 {
+        font-size: 2.2rem;
+      }
+      .section-title {
+        font-size: 1.5rem;
+      }
+      .contact-block {
+        flex-direction: column;
+        align-items: start;
+        gap: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- HEADER / INTRO -->
+    <header class="intro">
+      <div class="intro-text">
+        <h1>Rahul Kumar <span>•</span></h1>
+        <div class="badge"><i class="fas fa-graduation-cap" style="margin-right: 6px;"></i> BTech · 3rd Sem</div>
+        <div class="intro-meta">
+          <span><i class="fas fa-university"></i> NCE Chandi, BEU Patna</span>
+          <span><i class="fas fa-calendar-alt"></i> 2024 – 2028</span>
+          <span><i class="fas fa-code"></i> CSE · AI & ML</span>
+        </div>
+      </div>
+      <div class="profile-pic">
+        <i class="fas fa-user-graduate" style="font-size: 3.2rem;"></i>
+      </div>
+    </header>
+
+    <!-- ABOUT / SHORT BIO -->
+    <section>
+      <div class="section-title">
+        <i class="fas fa-user-astronaut"></i> About Me
+      </div>
+      <p style="max-width: 800px; font-size: 1.05rem; background: #f3f8ff; padding: 1.2rem 1.8rem; border-radius: 30px; border-left: 6px solid #2563eb;">
+        <i class="fas fa-quote-left" style="color: #2563eb; margin-right: 8px;"></i>
+        I'm a passionate BTech student at <strong>NCE Chandi, BEU Patna</strong>, currently in my 3rd semester. 
+        I love building practical solutions — from web apps to AI models. Always eager to learn, collaborate, and turn ideas into reality.
+      </p>
+    </section>
+
+    <!-- SKILLS + EDUCATION (grid) -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 0.5rem;">
+      <!-- left: skills -->
+      <div>
+        <div class="section-title" style="margin-top: 1rem;">
+          <i class="fas fa-cogs"></i> Skills & Tools
+        </div>
+        <div class="grid-2col" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div class="card">
+            <h3><i class="fas fa-code"></i> Languages</h3>
+            <div style="margin-top: 4px;">
+              <span class="skill-tag">C</span>
+              <span class="skill-tag">C++</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">Java</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3><i class="fas fa-laptop-code"></i> Web</h3>
+            <div>
+              <span class="skill-tag">HTML5</span>
+              <span class="skill-tag">CSS3</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">React</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3><i class="fas fa-database"></i> Data & AI</h3>
+            <div>
+              <span class="skill-tag">SQL</span>
+              <span class="skill-tag">Pandas</span>
+              <span class="skill-tag">NumPy</span>
+              <span class="skill-tag">TensorFlow</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3><i class="fas fa-tools"></i> Tools</h3>
+            <div>
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">VS Code</span>
+              <span class="skill-tag">Figma</span>
+              <span class="skill-tag">Jupyter</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- right: education highlights -->
+      <div>
+        <div class="section-title" style="margin-top: 1rem;">
+          <i class="fas fa-school"></i> Education
+        </div>
+        <div class="card" style="background: #eef5fc; border-color: #c4d9f0;">
+          <h3><i class="fas fa-university" style="color: #1e3a5f;"></i> NCE Chandi</h3>
+          <p style="font-weight: 600; font-size: 1rem;">BEU Patna · BTech CSE</p>
+          <p><i class="fas fa-calendar-check" style="color: #2563eb;"></i> 2024 – 2028 · 3rd Semester</p>
+          <p style="margin-top: 6px; font-size: 0.9rem;"><i class="fas fa-star" style="color: #f5b342;"></i> CGPA: 8.4 (till 2nd sem)</p>
+          <p style="font-size: 0.9rem;"><i class="fas fa-medal" style="color: #2563eb;"></i> 1st rank in college coding contest</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="section-title" style="margin-top: 2rem;">
+      <i class="fas fa-folder-open"></i> Projects
+    </div>
+
+    <div class="project-item">
+      <h4><i class="fas fa-brain"></i> Crop Yield Prediction (ML)</h4>
+      <div class="project-tech">
+        <span>Python</span> <span>Scikit-learn</span> <span>Pandas</span> <span>Flask</span>
+      </div>
+      <p style="margin-top: 6px;">Built a ML model to predict crop yield based on soil & weather data. Deployed as a web app using Flask. Achieved 87% accuracy.</p>
+    </div>
+
+    <div class="project-item">
+      <h4><i class="fas fa-robot"></i> Smart Chatbot for College</h4>
+      <div class="project-tech">
+        <span>Python</span> <span>NLTK</span> <span>Streamlit</span> <span>JSON</span>
+      </div>
+      <p style="margin-top: 6px;">Rule-based chatbot for NCE Chandi that answers FAQs about courses, faculty, and campus. Integrated with a simple UI using Streamlit.</p>
+    </div>
+
+    <div class="project-item">
+      <h4><i class="fas fa-cloud-sun"></i> Weather Dashboard</h4>
+      <div class="project-tech">
+        <span>HTML/CSS</span> <span>JavaScript</span> <span>OpenWeather API</span>
+      </div>
+      <p style="margin-top: 6px;">Real-time weather dashboard with 5-day forecast, dynamic icons, and location search. Built for the college tech fest.</p>
+    </div>
+
+    <!-- EXTRACURRICULAR / ACHIEVEMENTS -->
+    <div class="section-title" style="margin-top: 2rem;">
+      <i class="fas fa-trophy"></i> Achievements & Activities
+    </div>
+    <div class="grid-2col" style="grid-template-columns: repeat(auto-fit, minmax(200px,1fr));">
+      <div class="card"><i class="fas fa-award" style="color: #2563eb; font-size: 1.4rem;"></i><h3 style="margin-top: 6px; font-size: 1rem;">CodeChef 3⭐</h3><p>Solved 200+ DSA problems</p></div>
+      <div class="card"><i class="fas fa-users" style="color: #2563eb; font-size: 1.4rem;"></i><h3 style="margin-top: 6px; font-size: 1rem;">Tech Club Lead</h3><p>Organised 3 workshops at NCE</p></div>
+      <div class="card"><i class="fas fa-laptop" style="color: #2563eb; font-size: 1.4rem;"></i><h3 style="margin-top: 6px; font-size: 1rem;">Hackathon Finalist</h3><p>Smart India Hackathon 2025</p></div>
+    </div>
+
+    <!-- CONTACT / FOOTER -->
+    <div class="contact-block">
+      <div class="contact-info">
+        <a href="#"><i class="fas fa-envelope"></i> rahul.kumar@ncechandi.edu</a>
+        <a href="#"><i class="fab fa-github"></i> github.com/rahulnce</a>
+        <a href="#"><i class="fab fa-linkedin-in"></i> linkedin.com/in/rahulnce</a>
+      </div>
+      <div style="font-weight: 500; color: #1a3a5e;">
+        <i class="fas fa-map-pin" style="color: #2563eb;"></i> Chandi, Nalanda · BEU Patna
+      </div>
+    </div>
+
+    <div class="footer-note">
+      <span><strong>NCE Chandi, BEU Patna</strong> · BTech 3rd Sem · 2026</span>
+      <span><i class="fas fa-heart" style="color: #2563eb;"></i> built with curiosity</span>
+    </div>
+
+  </div>
+  <!-- container end -->
+</body>
+</html>
